@@ -1,0 +1,173 @@
+@font-face {
+  font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
+	    	url('../fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
+	    	url('../fonts/OpenSans-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
+	    	url('../fonts/OpenSans-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+	src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+	    	url('../fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body  {
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 160px;
+}
+
+/* header-top */
+
+.header-top {
+  background-color: #000;
+}
+
+.header-top__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 62px;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.login-link {
+  padding-left: 20px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  background-image: url(../img/login-img.svg);
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  background-position: left center;
+}
+
+/* header-bottom */
+
+.header-bottom {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.header-bottom__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+}
+
+.header-bottom__nav-list {
+  display: flex;
+}
+
+.header-bottom__nav-item {
+  padding-right: 15px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  cursor: pointer;
+  background-image: url(../img/frame_17.svg);
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: right center;
+}
+
+.header-bottom__nav-item:not(:last-child) {
+  margin-right: 96px;
+}
+
+.search {
+  display: flex;
+}
+
+.search-submit {
+  margin-right: 9px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.search-input {
+  width: 218px;
+  color: #fff;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+.search-input::placeholder {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
