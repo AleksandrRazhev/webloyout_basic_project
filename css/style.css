@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Open Sans';
 	src: url('../fonts/OpenSans-Regular.woff2') format('woff2'),
-	    	url('../fonts/OpenSans-Regular.woff') format('woff');
+	    url('../fonts/OpenSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: 'Open Sans';
 	src: url('../fonts/OpenSans-Italic.woff2') format('woff2'),
-	    	url('../fonts/OpenSans-Italic.woff') format('woff');
+	    url('../fonts/OpenSans-Italic.woff') format('woff');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: 'Open Sans';
 	src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2'),
-	    	url('../fonts/OpenSans-SemiBold.woff') format('woff');
+	    url('../fonts/OpenSans-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: 'Open Sans';
 	src: url('../fonts/OpenSans-Bold.woff2') format('woff2'),
-	    	url('../fonts/OpenSans-Bold.woff') format('woff');
+	    url('../fonts/OpenSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -62,9 +62,9 @@ h1 {
 }
 
 .container {
-  max-width: 1920px;
+  max-width: 1660px;
   margin: 0 auto;
-  padding: 0 160px;
+  padding: 0 30px;
 }
 
 /* header-top */
@@ -75,20 +75,36 @@ h1 {
 
 .header-top__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   min-height: 100px;
 }
 
+.burger {
+  display: none;
+}
+
+.logo {
+  display: inline-block;
+  width: 173px;
+  height: 39.9px;
+}
+
+.header-top__logo {
+  width: 22%;
+  margin-right: auto;
+}
+
+.header-top__nav {
+  flex-grow: 1;
+}
+
+.serch-btn {
+  display: none;
+}
+
 .nav-list {
+  justify-content: space-between;
   display: flex;
-}
-
-.nav-item {
-}
-
-.nav-item:not(:last-child) {
-  margin-right: 62px;
 }
 
 .nav-link {
@@ -98,7 +114,15 @@ h1 {
   color: #fff;
 }
 
+.login {
+  width: 22%;
+  display: flex;
+}
+
 .login-link {
+  display: inline-block;
+  width: 73px;
+  margin-left: auto;
   padding-left: 20px;
   font-weight: 400;
   font-size: 18px;
@@ -123,8 +147,13 @@ h1 {
   min-height: 70px;
 }
 
+.header-bottom__nav {
+  flex-grow: 1;
+}
+
 .header-bottom__nav-list {
   display: flex;
+  justify-content: space-between;
 }
 
 .header-bottom__nav-item {
@@ -138,18 +167,19 @@ h1 {
   background-repeat: no-repeat;
   background-size: 12px 7px;
   background-position: right center;
-}
-
-.header-bottom__nav-item:not(:last-child) {
-  margin-right: 96px;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
 }
 
 .search {
   display: flex;
+  justify-content: flex-end;
+  width: 35.4%;
 }
 
 .search-submit {
   margin-right: 9px;
+  transform: translateY(4px);
   cursor: pointer;
   background: none;
   border: none;
@@ -157,6 +187,10 @@ h1 {
 
 .search-input {
   width: 218px;
+  padding-bottom: 7px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
   color: #fff;
   background: none;
   border: none;
@@ -164,10 +198,80 @@ h1 {
 }
 
 .search-input::placeholder {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
   color: rgba(255, 255, 255, 0.85);
 }
+
+.header-bottom__nav-item {
+  position: relative;
+}
+
+.dropdown-list-active {
+  background-color: #7943A4;
+}
+
+.dropdown-list-active .dropdown-list {
+  display: block;
+  animation: anim .3s ease-in-out 1;
+}
+
+.dropdown-list-opacity .dropdown-list {
+  animation: anim reverse .3s ease-in-out;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 47px;
+  width: 300px;
+  height: 300px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.dropdown-item {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+
+.dropdown-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.dropdown-link {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #fff;
+}
+
+/* custom scrollbar */
+
+.simplebar-track.simplebar-vertical {
+  width: 2px;
+  top: 40px;
+  bottom: 40px;
+  right: 19px;
+  background-color: #000;
+}
+
+.simplebar-scrollbar {
+  width: 2px;
+  background-color: #fff;
+}
+
 

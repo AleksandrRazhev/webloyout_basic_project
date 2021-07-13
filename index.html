@@ -5,14 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
 </head>
 <body>
   <header>
     <div class="header-top">
       <div class="container header-top__container">
-        <div class="logo header-top__logo">
+        <div class="burger"></div>
+        <div class="header-top__logo">
           <a class="logo" href="">
             <svg width="173" height="40" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2.78965 32.7802L0.289746 29.1348H2.09561L3.79365 31.7425L5.50518 29.1348H7.29756L4.79092 32.7802L7.42559 36.5873H5.6332L3.79365 33.7977L1.96084 36.5873H0.168457L2.78965 32.7802Z" fill="white"/>
@@ -48,10 +52,16 @@
               </svg>
           </a>
         </div>
+        <div class="serch-btn">
+          <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" fill="white"/>
+          </svg>
+        </div>
         <nav class="header-top__nav">
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-link" href="">О нас</a>
+              <a class="nav-link" href="">О&nbsp;нас</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">Галерея</a>
@@ -74,7 +84,6 @@
           </ul>
         </nav>
         <div class="login">
-          </div>
           <a class="login-link" href="">Войти</a>
         </div>
       </div>
@@ -83,11 +92,86 @@
       <div class="container header-bottom__container">
         <nav class="header-bottom__nav">
           <ul class="header-bottom__nav-list">
-            <li class="header-bottom__nav-item">Реализм</li>
-            <li class="header-bottom__nav-item">Импрессионизм</li>
-            <li class="header-bottom__nav-item">Постимпрессионизм</li>
-            <li class="header-bottom__nav-item">Авангард</li>
-            <li class="header-bottom__nav-item">Футуризм</li>
+            <li class="header-bottom__nav-item">Реализм
+              <ul class="dropdown-list" data-simplebar>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Тинторетто</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Фридрих</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Леонардо</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Верроккьо</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-bottom__nav-item">Импрессионизм
+              <ul class="dropdown-list" data-simplebar>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Моне</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Сислей</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Мане</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Ренуар</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-bottom__nav-item">Постимпрессионизм
+              <ul class="dropdown-list" data-simplebar>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Ван Гог</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Сезанн</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Гоген</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Сёра</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-bottom__nav-item">Авангард
+              <ul class="dropdown-list" data-simplebar>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Кандинский</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Маринетти</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Малевич</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Пикассо</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header-bottom__nav-item">Футуризм
+              <ul class="dropdown-list" data-simplebar>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Карра</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Прателла</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Северини</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="dropdown-link" href="">Балла</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <form class="search" action="https://jsonplaceholder.typicode.com/posts" method="POST">
