@@ -168,7 +168,7 @@ h1 {
   background-size: 12px 7px;
   background-position: right center;
   background-color: transparent;
-  transition: background-color .3s ease-in-out;
+  transition: background-color 3s linear;
 }
 
 .search {
@@ -215,20 +215,10 @@ h1 {
 
 .dropdown-list-active .dropdown-list {
   display: block;
-  animation: anim .3s ease-in-out 1;
 }
 
 .dropdown-list-opacity .dropdown-list {
-  animation: anim reverse .3s ease-in-out 1;
-}
-
-@keyframes anim {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 .dropdown-list {
@@ -239,6 +229,8 @@ h1 {
   height: 300px;
   padding: 40px;
   background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 3s linear;
 }
 
 .dropdown-item {
@@ -273,5 +265,4 @@ h1 {
   width: 2px;
   background-color: #fff;
 }
-
 
