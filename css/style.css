@@ -219,7 +219,7 @@ h1 {
 }
 
 .dropdown-list-opacity .dropdown-list {
-  animation: anim reverse .3s ease-in-out;
+  animation: anim reverse .3s ease-in-out 1;
 }
 
 @keyframes anim {
