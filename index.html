@@ -8,10 +8,11 @@
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">
+  <link rel="stylesheet" href="css/choices.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
@@ -23,14 +24,13 @@
 
   <div class="back-hero-img">
 
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide slide-1"></div>
-        <div class="swiper-slide slide-2"></div>
-        <div class="swiper-slide slide-3"></div>
+    <div class="swiper-container back-hero-img__swiper-container">
+      <div class="swiper-wrapper back-hero-img__swiper-wrapper">
+        <div class="swiper-slide back-hero-img__swiper-slide slide-1"></div>
+        <div class="swiper-slide back-hero-img__swiper-slide slide-2"></div>
+        <div class="swiper-slide back-hero-img__swiper-slide slide-3"></div>
       </div>
     </div>
-    <script src="js/swiper.js"></script>
 
     <header>
       <div class="header-top">
@@ -109,27 +109,27 @@
             </span>
           </form>
           <nav class="header-top__nav" id="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">О&nbsp;нас</a>
+            <ul class="header-top__nav-list">
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="#about">О&nbsp;нас</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Галерея</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">Галерея</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Каталог</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">Каталог</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">События</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">События</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Издания</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">Издания</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Проекты</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">Проекты</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="">Контакты</a>
+              <li class="header-top__nav-item">
+                <a class="header-top__nav-link" href="">Контакты</a>
               </li>
             </ul>
             <div class="header-top__login">
@@ -147,113 +147,128 @@
       <div class="header-bottom">
         <div class="container header-bottom__container">
           <nav class="header-bottom__nav">
-            <div class="header-bottom__nav-list">
-              <div class="header-bottom__nav-item" tabindex="0">Реализм
-                <span class="nav-item-symbol">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ul class="header-bottom__nav-list">
+              <li class="header-bottom__nav-item">
+                <button class="header-bottom__btn">
+                  Реализм
+                  <svg class="header-bottom__item-symbol" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="white"/>
                   </svg>
-                </span>
+                </button>
                 <div class="dropdown-list" data-simplebar>
-                  <span class="dropdown-item back realism-tintoretto">
-                    <a class="dropdown-link" href="">Тинторетто</a>
-                  </span>
-                  <span class="dropdown-item back realism-fridrich">
-                    <a class="dropdown-link" href="">Фридрих</a>
-                  </span>
-                  <span class="dropdown-item back realism-leonardo">
-                    <a class="dropdown-link" href="">Леонардо</a>
-                  </span>
-                  <span class="dropdown-item back realism-verokko">
-                    <a class="dropdown-link" href="">Верроккьо</a>
-                  </span>
+                  <ul class="dropdown-list__list">
+                    <li class="dropdown-item back realism-tintoretto">
+                      <a class="dropdown-link" href="">Тинторетто</a>
+                    </li>
+                    <li class="dropdown-item back realism-fridrich">
+                      <a class="dropdown-link" href="">Фридрих</a>
+                    </li>
+                    <li class="dropdown-item back realism-leonardo">
+                      <a class="dropdown-link" href="">Леонардо</a>
+                    </li>
+                    <li class="dropdown-item back realism-verokko">
+                      <a class="dropdown-link" href="">Верроккьо</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="header-bottom__nav-item" tabindex="0">Импрессионизм
-                <span  class="nav-item-symbol">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </li>
+              <li class="header-bottom__nav-item">
+                <button class="header-bottom__btn">
+                  Импрессионизм
+                  <svg class="header-bottom__item-symbol" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="white"/>
                   </svg>
-                </span>
+                </button>
                 <div class="dropdown-list" data-simplebar>
-                  <span class="dropdown-item back impressionism-mone">
-                    <a class="dropdown-link" href="">Моне</a>
-                  </span>
-                  <span class="dropdown-item back impressionism-sisley">
-                    <a class="dropdown-link" href="">Сислей</a>
-                  </span>
-                  <span class="dropdown-item back impressionism-mane">
-                    <a class="dropdown-link" href="">Мане</a>
-                  </span>
-                  <span class="dropdown-item back impressionism-renuar">
-                    <a class="dropdown-link" href="">Ренуар</a>
-                  </span>
+                  <ul class="dropdown-list__list">
+                    <li class="dropdown-item back impressionism-mone">
+                      <a class="dropdown-link" href="">Моне</a>
+                    </li>
+                    <li class="dropdown-item back impressionism-sisley">
+                      <a class="dropdown-link" href="">Сислей</a>
+                    </li>
+                    <li class="dropdown-item back impressionism-mane">
+                      <a class="dropdown-link" href="">Мане</a>
+                    </li>
+                    <li class="dropdown-item back impressionism-renuar">
+                      <a class="dropdown-link" href="">Ренуар</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="header-bottom__nav-item"  tabindex="0">Постимпрессионизм
-                <span  class="nav-item-symbol">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </li>
+              <li class="header-bottom__nav-item">
+                <button class="header-bottom__btn">
+                  Постимпрессионизм
+                  <svg class="header-bottom__item-symbol" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="white"/>
                   </svg>
-                </span>
+                </button>
                 <div class="dropdown-list" data-simplebar>
-                  <span class="dropdown-item back posimpressionism-vangog">
-                    <a class="dropdown-link" href="">Ван Гог</a>
-                  </span>
-                  <span class="dropdown-item back posimpressionism-sesann">
-                    <a class="dropdown-link" href="">Сезанн</a>
-                  </span>
-                  <span class="dropdown-item back posimpressionism-gogen">
-                    <a class="dropdown-link" href="">Гоген</a>
-                  </span>
-                  <span class="dropdown-item back posimpressionism-syora">
-                    <a class="dropdown-link" href="">Сёра</a>
-                  </span>
+                  <ul class="dropdown-list__list">
+                    <li class="dropdown-item back posimpressionism-vangog">
+                      <a class="dropdown-link" href="">Ван Гог</a>
+                    </li>
+                    <li class="dropdown-item back posimpressionism-sesann">
+                      <a class="dropdown-link" href="">Сезанн</a>
+                    </li>
+                    <li class="dropdown-item back posimpressionism-gogen">
+                      <a class="dropdown-link" href="">Гоген</a>
+                    </li>
+                    <li class="dropdown-item back posimpressionism-syora">
+                      <a class="dropdown-link" href="">Сёра</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="header-bottom__nav-item"  tabindex="0">Авангард
-                <span  class="nav-item-symbol">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </li>
+              <li class="header-bottom__nav-item">
+                <button class="header-bottom__btn">
+                  Авангард
+                  <svg class="header-bottom__item-symbol" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="white"/>
                   </svg>
-                </span>
+                </button>
                 <div class="dropdown-list" data-simplebar>
-                  <span class="dropdown-item back avangard-kandinsky">
-                    <a class="dropdown-link" href="">Кандинский</a>
-                  </span>
-                  <span class="dropdown-item back avangard-marinetty">
-                    <a class="dropdown-link" href="">Маринетти</a>
-                  </span>
-                  <span class="dropdown-item back avangard-malevich">
-                    <a class="dropdown-link" href="">Малевич</a>
-                  </span>
-                  <span class="dropdown-item back avangard-picasso">
-                    <a class="dropdown-link" href="">Пикассо</a>
-                  </span>
+                  <ul class="dropdown-list__list">
+                    <li class="dropdown-item back avangard-kandinsky">
+                      <a class="dropdown-link" href="">Кандинский</a>
+                    </li>
+                    <li class="dropdown-item back avangard-marinetty">
+                      <a class="dropdown-link" href="">Маринетти</a>
+                    </li>
+                    <li class="dropdown-item back avangard-malevich">
+                      <a class="dropdown-link" href="">Малевич</a>
+                    </li>
+                    <li class="dropdown-item back avangard-picasso">
+                      <a class="dropdown-link" href="">Пикассо</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="header-bottom__nav-item"  tabindex="0">Футуризм
-                <span  class="nav-item-symbol">
-                  <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              </li>
+              <li class="header-bottom__nav-item">
+                <button class="header-bottom__btn">
+                  Футуризм
+                  <svg class="header-bottom__item-symbol" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11 1L6 6L1 1" stroke="white"/>
                   </svg>
-                </span>
+                </button>
                 <div class="dropdown-list" data-simplebar>
-                  <span class="dropdown-item back futurism-karra">
-                    <a class="dropdown-link" href="">Карра</a>
-                  </span>
-                  <span class="dropdown-item back futurism-pratella">
-                    <a class="dropdown-link" href="">Прателла</a>
-                  </span>
-                  <span class="dropdown-item back futurism-severini">
-                    <a class="dropdown-link" href="">Северини</a>
-                  </span>
-                  <span class="dropdown-item back futurism-bella">
-                    <a class="dropdown-link" href="">Балла</a>
-                  </span>
+                  <ul class="dropdown-list__list">
+                    <li class="dropdown-item back futurism-karra">
+                      <a class="dropdown-link" href="">Карра</a>
+                    </li>
+                    <li class="dropdown-item back futurism-pratella">
+                      <a class="dropdown-link" href="">Прателла</a>
+                    </li>
+                    <li class="dropdown-item back futurism-severini">
+                      <a class="dropdown-link" href="">Северини</a>
+                    </li>
+                    <li class="dropdown-item back futurism-bella">
+                      <a class="dropdown-link" href="">Балла</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </div>
+              </li>
+            </ul>
           </nav>
           <form class="header-bottom__search" action="https://jsonplaceholder.typicode.com/posts" method="POST">
             <button class="header-bottom__search-submit" type="submit">
@@ -298,8 +313,49 @@
         <h2 class="gallery-title">
           Галерея
         </h2>
+        <select name="select" id="gallery__select">
+          <option value="">Живопись</option>
+          <option value="">Рисунок</option>
+          <option value="">Скульптура</option>
+        </select>
+        <script src="js/choices.js"></script>
+        <script src="js/choice_custom.js"></script>
       </div>
-      <div class="gallery__slider">gallery__slider</div>
+      <div class="gallery__slider">
+        <div class="gallery__slider-nav">
+          <button class="swiper-button-prev gallery__swiper-button-prev">
+            <svg class="gallery__swiper-button-prev-img" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" fill="#666666"/>
+              <path d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" stroke="black"/>
+              <path d="M16 20L11 15L16 10" stroke="white"/>
+            </svg>
+          </button>
+          <div class="gallery__pagination"></div>
+          <button class="swiper-button-next gallery__swiper-button-next">
+            <svg class="gallery__swiper-button-next-img" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
+              <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="black"/>
+              <path d="M14 20L19 15L14 10" stroke="white"/>
+            </svg>
+          </button>
+        </div>
+        <div class="swiper-container gallery__swiper-container">
+          <div class="swiper-wrapper gallery__swiper-wrapper">
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 1</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 2</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 3</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 4</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 5</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 6</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 7</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 8</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 9</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 10</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 11</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">slide 12</a>
+          </div>
+        </div>
+      </div>
       <div class="gallery__sale">
         <p>
           Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
@@ -308,6 +364,8 @@
     </div>
   </section>
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
 </body>
 
 </html>
