@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.header-bottom__nav-item').forEach(function(openList) {
     openList.addEventListener('click', function(event) {
-      open(event.target)
+      open(event.currentTarget)
     })
     openList.addEventListener('keydown', function (event) {
       if (event.code === 'Space' || event.code === 'Enter') {
         event.preventDefault()
-        open(event.target)
+        open(event.currentTarget)
       }
     })
   })
