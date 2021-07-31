@@ -1205,7 +1205,7 @@ h1 {
 
 /* modal window */
 
-.gallery__inner {
+.gallery__mod-win {
   display: none;
   position: absolute;
   top: 0;
@@ -1215,36 +1215,53 @@ h1 {
   z-index: 3;
 }
 
-.gallery__inner-on {
+.gallery__mod-win-on {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.gallery__inner-block {
+.gallery__mod-win-block {
   width: calc( 900 / 1600 * 100%);
   height: 500px;
   display: flex;
+  background-color: #fff;
 }
 
-.gallery__inner-img {
+.gallery__mod-win-img {
   min-width: calc(400 / 900 * 100%);
   display: flex;
 }
 
-.gallery__inner-img .gallery__swiper-slide {
+.gallery__mod-win-img .gallery__swiper-slide {
   width: 100%;
   height: 100%;
+  margin-top: 0;
+  margin-right: 0;
 }
 
-.gallery__inner-text {
+.gallery__mod-win-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-width: calc(500 / 900 * 100%);
-  background-color: chartreuse;
+  padding: 20px;
 }
+
+.gallery__mod-win-close {
+  align-self: flex-end;
+  width: 16px;
+  height: 16px;
+  align-items: flex-end;
+  background: none;
+  border: none;
+}
+
 
 
 
 .open__swiper-slide {
+  pointer-events: none;
 }
 
 
