@@ -19,6 +19,7 @@
   <script src="js/header_dropdown_click.js"></script>
   <script src="js/burger_menu.js"></script>
   <script src="js/header_search_click.js"></script>
+  <script src="js/gallery_modal.js"></script>
 </head>
 <body>
 
@@ -309,11 +310,32 @@
 
   <section class="gallery">
     <div class="container gallery__container">
+      <div class="gallery__inner">
+        <div class="gallery__inner-block"> <!-- modal window -->
+          <div class="gallery__inner-img">
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_2.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_2.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_2.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_2.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_2.jpg" alt="">
+              </picture>
+            </a>
+          </div>
+          <div class="gallery__inner-text">
+            <p>
+              Картина из второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за её создание в 1930-1931 годах, после того, как первый цикл был утерян после Берлинской и Варшавской выставок в 1927 году.
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="gallery__title-block">
         <h2 class="gallery-title">
           Галерея
         </h2>
-        <select name="select" id="gallery__select">
+        <span class="gallery__select-description">Фильтр:</span>
+        <select  name="select" id="gallery__select">
           <option value="">Живопись</option>
           <option value="">Рисунок</option>
           <option value="">Скульптура</option>
@@ -341,24 +363,228 @@
         </div>
         <div class="swiper-container gallery__swiper-container">
           <div class="swiper-wrapper gallery__swiper-wrapper">
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 1</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 2</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 3</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 4</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 5</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 6</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 7</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 8</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 9</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 10</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 11</a>
-            <a class="swiper-slide gallery__swiper-slide" href="">slide 12</a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_1.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_1.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_1.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_1.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_1.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_2.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_2.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_2.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_2.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_2.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_3.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_3.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_3.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_3.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_3.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_4.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_4.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_4.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_4.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_4.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_5.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_5.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_5.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_5.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_5.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_6.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_6.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_6.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_6.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_6.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_7.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_7.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_7.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_7.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_7.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_8.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_8.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_8.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_8.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_8.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_9.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_9.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_9.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_9.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_9.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_10.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_10.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_10.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_10.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_10.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_11.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_11.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_11.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_11.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_11.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_12.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_12.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_12.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_12.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_12.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_13.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_13.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_13.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_13.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_13.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_14.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_14.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_14.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_14.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_14.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_15.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_15.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_15.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_15.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_15.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_16.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_16.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_16.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_16.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_16.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_17.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_17.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_17.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_17.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_17.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_18.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_18.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_18.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_18.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_18.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_19.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_19.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_19.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_19.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_19.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_20.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_20.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_20.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_20.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_20.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_21.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_21.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_21.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_21.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_21.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_22.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_22.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_22.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_22.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_22.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_23.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_23.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_23.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_23.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_23.jpg" alt="">
+              </picture>
+            </a>
+            <a class="swiper-slide gallery__swiper-slide" href="">
+              <picture>
+                <source srcset="img/gallery_320_24.jpg" media="(max-width: 320px)">
+                <source srcset="img/gallery_768_24.jpg" media="(max-width: 768px)">
+                <source srcset="img/gallery_1024_24.jpg" media="(max-width: 1024px)">
+                <source srcset="img/gallery_1920_24.jpg" media="(min-width: 1025px)">
+                <img class="gallery__swiper-img" src="img/gallery_1920_24.jpg" alt="">
+              </picture>
+            </a>
           </div>
         </div>
       </div>
       <div class="gallery__sale">
-        <p>
-          Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
+        <p class="gallery__sale-text">
+          Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__sale-link" href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
         </p>
       </div>
     </div>

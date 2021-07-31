@@ -3,17 +3,6 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
   direction: 'horizontal',
   loop: true,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
   scrollbar: {
     hide: true,
   },
@@ -24,12 +13,26 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
 const gallerySwiper = new Swiper('.gallery__swiper-container', {
 
   slidesPerColumnFill: "row",
-  slidesPerView: 3,
-  slidesPerColumn: 2,
-  spaceBetween: 50,
+  slidesPerView: 1,
+  slidesPerColumn: 1,
+  spaceBetween: 20,
   pagination: {
     el: ".gallery__pagination",
     type: "fraction"
+  },
+
+  breakpoints: {
+    577: {
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      spaceBetween: 34
+    },
+
+    1201: {
+      slidesPerView: 3,
+      slidesPerColumn: 2,
+      spaceBetween: 50
+    }
   },
 
   // Optional parameters
@@ -38,8 +41,8 @@ const gallerySwiper = new Swiper('.gallery__swiper-container', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.gallery__swiper-button-next',
+    prevEl: '.gallery__swiper-button-prev',
   },
 
   scrollbar: {
