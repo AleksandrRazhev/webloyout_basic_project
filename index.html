@@ -20,6 +20,8 @@
   <script src="js/burger_menu.js"></script>
   <script src="js/header_search_click.js"></script>
   <script src="js/gallery_modal.js"></script>
+  <script src="js/catalog_accordion.js"></script>
+  <script src="js/catalog_artist.js"></script>
 </head>
 <body>
 
@@ -308,7 +310,7 @@
     </div>
   </section>
 
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <div class="container gallery__container">
       <div class="gallery__mod-win">
         <div class="gallery__mod-win-block"> <!-- modal window -->
@@ -820,6 +822,276 @@
         <p class="gallery__sale-text">
           Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__sale-link" href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog">
+    <div class="container catalog__container">
+      <div class="catalog__title">
+        <h2 class="catalog__title-text">Каталог</h2>
+        <div class="catalog__flags">
+          <span class="flag flag-french"></span>
+          <span class="flag flag-german"></span>
+          <span class="flag flag-italian"></span>
+          <span class="flag flag-russian"></span>
+          <span class="flag flag-belgian"></span>
+        </div>
+      </div>
+      <div class="catalog__artist">
+        <ul class="catalog__artist-card-list">
+          <li class="catalog__artist-card-item benedetto-di-bindo" data-catalog-artist="1"></li>
+          <li class="catalog__artist-card-item bergognone-ambrogio" data-catalog-artist="2"></li>
+          <li class="catalog__artist-card-item bissolo-fancesco" data-catalog-artist="3"></li>
+          <li class="catalog__artist-card-item boltraffio-giovanni" data-catalog-artist="4"></li>
+          <li class="catalog__artist-card-item bonsignori-francesco" data-catalog-artist="5"></li>
+          <li class="catalog__artist-card-item botticini-raffaello" data-catalog-artist="6"></li>
+          <li class="catalog__artist-card-item bramantino" data-catalog-artist="7"></li>
+          <li class="catalog__artist-card-item brea-ludovico" data-catalog-artist="8"></li>
+          <li class="catalog__artist-card-item biagio-dantonio-tucci" data-catalog-artist="9"></li>
+          <li class="catalog__artist-card-item vecchietta" data-catalog-artist="10"></li>
+          <li class="catalog__artist-card-item andrea-verrocchio" data-catalog-artist="11"></li>
+          <li class="catalog__artist-card-item domenico-ghirlandaio catalog__artist-card-item-on" data-catalog-artist="12">
+            <button class="artist-card-item-picture">
+              <picture>
+                <source srcset="img/domenico_ghirlandaio_320.jpg" media="(max-width: 320px)">
+                <source srcset="img/domenico_ghirlandaio_768.jpg" media="(max-width: 768px)">
+                <source srcset="img/domenico_ghirlandaio_1024.jpg" media="(max-width: 1024px)">
+                <source srcset="img/domenico_ghirlandaio_1920.jpg" media="(min-width: 1025px)">
+                <img class="artist-card-item-img" src="img/domenico_ghirlandaio_1920.jpg" alt="">
+              </picture>
+            </button>
+            <span class="artist-card-item-name">Доменико Гирландайо</span>
+            <span class="artist-card-item-years">2 июня 1448 — 11 января 1494.</span>
+            <p class="artist-card-item-description">
+              Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей (в их роли выступают знатные граждане Флоренции в костюмах того времени).
+            </p>
+          </li>
+          <li class="catalog__artist-card-item benozzo-gozzoli" data-catalog-artist="13"></li>
+          <li class="catalog__artist-card-item granacci-francesco" data-catalog-artist="14"></li>
+          <li class="catalog__artist-card-item gregorio-di-cecco" data-catalog-artist="15"></li>
+          <li class="catalog__artist-card-item giovanni-da-udine" data-catalog-artist="16"></li>
+          <li class="catalog__artist-card-item giovanni-di-paolo" data-catalog-artist="17"></li>
+          <li class="catalog__artist-card-item giorgione" data-catalog-artist="18"></li>
+          <li class="catalog__artist-card-item tarantino-bernardo" data-catalog-artist="19"></li>
+          <li class="catalog__artist-card-item pesellino" data-catalog-artist="20"></li>
+          <li class="catalog__artist-card-item pietro-perugino" data-catalog-artist="21"></li>
+          <li class="catalog__artist-card-item peruzzi-baldassare" data-catalog-artist="22"></li>
+          <li class="catalog__artist-card-item pisanello" data-catalog-artist="23"></li>
+          <li class="catalog__artist-card-item pinturicchio" data-catalog-artist="24"></li>
+        </ul>
+      </div>
+      <div class="catalog__menu">
+        <ul class="catalog__menu-list">
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1400 по 1499 гг.</span>
+            </div>
+            <div class="catalog__menu-item-block">
+              <ul class="catalog__menu-item-list">
+                <li class="catalog__menu-item-item" data-catalog-item="1">
+                  <button class="catalog__menu-item-item-artist">
+                    Бенедетто ди Биндо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="2">
+                  <button class="catalog__menu-item-item-artist">
+                    Бергоньоне, Амброджо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="3">
+                  <button class="catalog__menu-item-item-artist">
+                    Биссоло, Франческо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="4">
+                  <button class="catalog__menu-item-item-artist">
+                    Больтраффио, Джованни
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="5">
+                  <button class="catalog__menu-item-item-artist">
+                    Бонсиньори, Франческо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="6">
+                  <button class="catalog__menu-item-item-artist">
+                    Боттичини, Рафаэлло
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="7">
+                  <button class="catalog__menu-item-item-artist">
+                    Брамантино
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="8">
+                  <button class="catalog__menu-item-item-artist">
+                    Бреа, Людовико
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="9">
+                  <button class="catalog__menu-item-item-artist">
+                    Бьяджо д’Антонио Туччи
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="10">
+                  <button class="catalog__menu-item-item-artist">
+                    Веккьетта
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="11">
+                  <button class="catalog__menu-item-item-artist">
+                    Андреа Верроккьо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="12">
+                  <button class="catalog__menu-item-item-artist catalog__item-artist-on">
+                    Доменико Гирландайо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="13">
+                  <button class="catalog__menu-item-item-artist">
+                    Беноццо Гоццоли
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="14">
+                  <button class="catalog__menu-item-item-artist">
+                    Граначчи, Франческо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="15">
+                  <button class="catalog__menu-item-item-artist">
+                    Грегорио ди Чекко
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="16">
+                  <button class="catalog__menu-item-item-artist">
+                    Джованни да Удине
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="17">
+                  <button class="catalog__menu-item-item-artist">
+                    Джованни ди Паоло
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="18">
+                  <button class="catalog__menu-item-item-artist">
+                    Джорджоне
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="19">
+                  <button class="catalog__menu-item-item-artist">
+                    Парентино, Бернардо
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="20">
+                  <button class="catalog__menu-item-item-artist">
+                    Пезеллино
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="21">
+                  <button class="catalog__menu-item-item-artist">
+                    Пьетро Перуджино
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="22">
+                  <button class="catalog__menu-item-item-artist">
+                    Перуцци, Бальдассаре
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="23">
+                  <button class="catalog__menu-item-item-artist">
+                    Пизанелло
+                  </button>
+                </li>
+                <li class="catalog__menu-item-item" data-catalog-item="24">
+                  <button class="catalog__menu-item-item-artist">
+                    Пинтуриккьо
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1500 по 1599 гг.</span>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1600 по 1699 гг.</span>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1700 по 1799 гг.</span>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1800 по 1899 гг.</span>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 1900 по 1999 гг.</span>
+            </div>
+          </li>
+          <li class="catalog__menu-item">
+            <div class="catalog__menu-description">
+              <button class="catalog__menu-description-btn">
+                <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
+                  <path  class="description-btn-img-border" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" stroke="black"/>
+                  <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black"/>
+                </svg>
+              </button>
+              <span class="catalog__menu-description-text">C 2000 г.</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
