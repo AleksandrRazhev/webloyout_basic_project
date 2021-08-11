@@ -1789,14 +1789,14 @@ h1 {
 
 .catalog__menu-item-block {
   display: none;
-  height: 0;
+  max-height: 0;
   overflow: hidden;
   border-top: 1px solid transparent;
-  transition: border-color .3s linear, height .3s linear;
+  transition: border-color .3s linear, max-height .3s linear;
 }
 
 .accordion-open ~ .catalog__menu-item-block {
-  height: 338px;
+  max-height: 338px;
   border-color: #7943A4;
 }
 
@@ -1857,13 +1857,13 @@ h1 {
   display: none;
   overflow: hidden;
   align-items: center;
-  height: 0;
+  max-height: 0;
   border-top: 1px solid transparent;
-  transition: height .3s linear, padding .3s linear;
+  transition: max-height .3s linear, padding .3s linear;
 }
 
 .accordion-open ~ .catalog__menu-empty-block {
-  height: 240px;
+  max-height: 240px;
   padding: 25px 0;
   border-color: #7943A4;
 }
