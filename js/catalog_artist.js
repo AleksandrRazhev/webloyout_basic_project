@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const artistEmptyInner = `
             <button class="artist-card-item-picture">
               <picture>
-                <source srcset="img/artist-x_320.png" media="(max-width: 320px)">
+                <source srcset="img/artist-x_320.png" media="(max-width: 576px)">
                 <source srcset="img/artist-x_768.png" media="(max-width: 768px)">
                 <source srcset="img/artist-x_1024.png" media="(max-width: 1024px)">
                 <source srcset="img/artist-x_1920.png" media="(min-width: 1025px)">
