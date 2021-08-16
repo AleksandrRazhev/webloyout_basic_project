@@ -896,7 +896,7 @@ h1 {
 
   .hero-description {
     max-width: 71%;
-    margin-bottom: 132px;
+    margin-bottom: 134px;
   }
 }
 
@@ -1121,8 +1121,6 @@ h1 {
   padding-bottom: 0;
 }
 
-
-
 .choices__list--dropdown .choices__item:not(:last-child) {
   border-bottom: 1px solid #999;
 }
@@ -1130,9 +1128,6 @@ h1 {
 .choices__list--dropdown {
   border-top: none
 }
-
-
-
 
 .choices__list--single {
   padding: 0;
@@ -1243,7 +1238,7 @@ h1 {
   position: relative;
   z-index: 1;
   display: block;
-  padding-top: 100%;
+  padding-top: calc(100% - 3px*2);
   border: 3px solid transparent;
   transition: border-color .3s ease;
 }
@@ -1267,6 +1262,12 @@ h1 {
 
 /* modal window */
 
+:root {
+  --modal-window-height: 500px;
+  --modal-window-width: 900;
+  --modal-window-left: 400;
+}
+
 .gallery__list {
   display: none;
 }
@@ -1289,24 +1290,21 @@ h1 {
 
 .gallery__mod-win-block {
   position: relative;
-  width: calc( 900 / 1660 * 100%);
-  min-height: 500px;
+  width: calc( var(--modal-window-width) / 1660 * 100%);
+  min-height: var(--modal-window-height);
   display: flex;
   background-color: #fff;
 }
 
 .gallery__mod-win-left {
-  position: relative;
+  min-width: calc(var(--modal-window-left) / var(--modal-window-width) * 100%);
 }
 
 .open__swiper-slide {
-  display: block;
-  position: static;
-  height: 100%;
   pointer-events: none;
 }
 
-.open__swiper-slide::before,
+.open__swiper-slide::before, 
 .open__swiper-slide::after {
   content: none;
   font-size: 0;
@@ -1314,18 +1312,15 @@ h1 {
 
 .open__swiper-slide picture {
   display: block;
+  width: 100%;
   height: 100%;
-  width: auto;
 }
 
 .open__swiper-slide .gallery__swiper-img {
-  display: block;
   position: static;
-  width: auto;
-  height: 100%;
   top: auto;
-  left: auto  ;
-  object-fit: contain;
+  left: auto;
+  object-fit: cover;
 }
 
 .gallery__mod-win-right {
@@ -1398,7 +1393,47 @@ h1 {
   left: 0;
   z-index: 5;
   background: rgba(0, 0, 0, 0.6);
-} 
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --modal-window-height: 594px;
+    --modal-window-width: 594;
+    --modal-window-left: 264;
+  }
+
+  .gallery__mod-win-block {
+    width: calc( var(--modal-window-width) / var(--modal-window-width) * 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --modal-window-height: 594px;
+    --modal-window-width: 668;
+    --modal-window-left: 264;
+  }
+
+  .gallery__mod-win-block {
+    width: calc( var(--modal-window-width) / var(--modal-window-width) * 100%);
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --modal-window-width: 290;
+    --modal-window-left: 290;
+  }
+
+  .gallery__mod-win-block {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .gallery__swiper-text-years {
+    margin-bottom: 12px;
+  }
+}
 
 /*=====  End of modal window  ======*/
 
@@ -1551,7 +1586,7 @@ h1 {
   }
   
   .choices {
-    margin-bottom: 40px;
+    margin-bottom: 39px;
   }
 
   .gallery__slider {
@@ -1585,7 +1620,7 @@ h1 {
   }
 
   .gallery__swiper-slide::before {
-    padding-top: 126%  ;
+    padding-top: 124.5%;
   }
 }
 
@@ -1714,7 +1749,7 @@ h1 {
   right: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .artist-card-item-name {
   margin-bottom: 10px;
@@ -1958,9 +1993,10 @@ h1 {
 .catalog__empty-block-img {
   display: inline-block;
   position: relative;
-  width: 275px;
-  height: 189px;
+  width: calc(275 / 800 * 100%);
+  min-height: 189px;
   margin-right: 24px;
+  flex-shrink: 0;
   border: 2px solid #B7B7B7;
 }
 
@@ -1994,3 +2030,181 @@ h1 {
   line-height: 22px;
   color: #9D5CD0;
 }
+
+@media (max-width: 1200px) {
+  .catalog__title {
+    width: 100%;
+    flex-grow: 0;
+  }
+
+  .catalog__flags {
+    align-items: flex-end;
+    min-height: 65px;
+    margin-bottom: 16px;
+  }
+
+  .artist-card-item-picture {
+    height: 274px;
+  }
+
+  .catalog__artist {
+    width: calc(50% - 25px);
+    margin-right: 25px;
+  }
+
+  .catalog__menu {
+    width: calc(50% - 25px);
+    margin-left: 25px;
+  }
+
+  .catalog__menu-item-item-artist {
+    font-size: 16px;
+    line-height: 31px;
+  }
+
+  .accordion-open ~ .catalog__menu-item-block {
+    max-height: 434px;
+  }
+
+  .catalog__menu-item-list {
+    max-height: 434px;
+  }
+
+  .catalog__empty-block-img {
+    width: calc(189 / 437 * 100%);
+    min-height: 130px;
+  }
+}
+
+@media (max-width: 992px) {
+  .catalog__flags {
+    min-height: 57px;
+    margin-bottom: 24px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .catalog__title-description {
+    margin-bottom: 21px;
+  }
+
+  .catalog__artist {
+    width: 100%;
+    margin-right: 0;
+    order: 1;
+  }
+
+  .artist-card-item-picture {
+    height: 419px;
+  }
+
+  .catalog__menu {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+
+  .accordion-open ~ .catalog__menu-item-block,
+  .catalog__menu-item-list {
+    max-height: 338px;
+  }
+
+  .catalog__empty-block-img {
+    width: calc(275 / 668 * 100%);
+    min-height: 189px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  :root {
+    --catalog-vertical-padding: 50px;
+    --catalog-vertical-padding: 50px
+  }
+
+  .catalog__title-text {
+    margin-right: 0;
+    font-size: 28px;
+    line-height: 38px;
+  }
+  
+  .catalog__flags {
+    width: 100%;
+  }
+
+  .flag {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+  }
+
+  .flag:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .flag-on::after {
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+  }
+
+  .catalog__title-description {
+    display: none;
+  }
+
+  .catalog__flags {
+    min-height: 44px;
+    margin-bottom: 19px;
+    flex-grow: 0;
+  }
+
+  .catalog__menu-description {
+    min-height: 72px;
+  }
+
+  .catalog__menu-description-text {
+    font-size: 18px;
+  }
+
+  .catalog__menu-description-btn-img {
+    width: 30px;
+    height: 30px;
+    top: calc(50% - (30px / 2));
+  }
+
+  .catalog__menu-item-list {
+    padding: 20px 0;
+  }
+
+  .accordion-open ~ .catalog__menu-item-block, .catalog__menu-item-list {
+    max-height: none;
+  }
+
+  .catalog__empty-block-img {
+    width: calc(90 / 290 * 100%);
+    min-height: 130px;
+  }
+
+  .catalog__empty-block-strong {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .catalog__empty-block-text {
+    max-width: none;
+    margin-bottom: 5px;
+  }
+
+  .artist-card-item-picture {
+    height: 181px;
+    margin-bottom: 19px;
+  }
+
+  .artist-card-item-name {
+    margin-bottom: 14px;
+  }
+
+}
+
+
