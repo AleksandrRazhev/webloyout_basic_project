@@ -52,3 +52,32 @@ const gallerySwiper = new Swiper('.gallery__swiper-container', {
   a11y: false,
 });
 
+const eventsSwiperClass = document.querySelector('.events__swiper-container')
+let eventsSwiper 
+
+initialEventsSwiper()
+
+window.addEventListener('resize', () => {
+  initialEventsSwiper()
+})
+
+
+function initialEventsSwiper() {
+  if (window.innerWidth <= 650 && eventsSwiperClass.dataset.mobile == 'false'){
+    eventsSwiper = new Swiper (eventsSwiperClass, {
+      slidesPerView: 1,
+      spaceBetween: 27,
+      loop: true,
+    })
+
+    eventsSwiperClass.dataset.mobile = 'true'
+  }
+
+  if (window.innerWidth > 650) {
+    eventsSwiperClass.dataset.mobile = 'false'
+    if (eventsSwiperClass.classList.contains('swiper-container-initialized')) {
+      eventsSwiper.destroy()
+    }
+  }
+}
+
