@@ -21,13 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 removeAccordionClasses()
                 removeListClasses()
                 if (accordionOpenElemParent.querySelector('.catalog__menu-item-block')) {
-                    accordionOpenElemParent.querySelector('.catalog__menu-item-block').classList.add('catalog__menu-item-block-on')
-                    setTimeout(addAccorionClasses, 0, accordionOpenElem, accordionOpenElemParent)
+                    //accordionOpenElemParent.querySelector('.catalog__menu-item-block').classList.add('catalog__menu-item-block-on')
+                    //setTimeout(addAccorionClasses, 0, accordionOpenElem, accordionOpenElemParent)
+                    let blockOn = () => {
+                        console.log('blockOn')
+                        accordionOpenElemParent.querySelector('.catalog__menu-item-block').classList.add('catalog__menu-item-block-on')
+                    }
+                    blockOn()
+                    let startAddAccorionClasses = () => {
+                        console.log('accordionClassesFunction')
+                        addAccorionClasses(accordionOpenElem, accordionOpenElemParent)
+                    }
+                    startAddAccorionClasses()
                 } else if (accordionOpenElemParent.querySelector('.catalog__menu-empty-block')) {
                     addEmptyBlockClasses(accordionOpenElem, accordionOpenElemParent)
                 } else {
-                    //начало, убрать else
-
                     let artistEmptyInner = document.createElement('div')
                     artistEmptyInner.classList.add('catalog__menu-empty-block')
                     artistEmptyInner.innerHTML = `
@@ -42,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     addEmptyBlockClasses(accordionOpenElem, accordionOpenElemParent)
                 }
-                //конец
             }
         })
     })
