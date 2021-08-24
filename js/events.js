@@ -5,9 +5,4 @@ document.addEventListener('DOMContentLoaded', function() {
             event.classList.add('events-on')
         })
     })
-    /* if (window.matchMedia("(max-width: 576px)").matches) {
-        const swiperContainer = document.querySelector('.events__block')
-        swiperContainer.classList.add('swiper-container')
-        swiperContainer.classList.add('event__swiper-container')
-    } */
 })

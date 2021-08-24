@@ -1,19 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.catalog__menu-description').forEach(function(accordionClick) {
-        accordionClick.addEventListener('click', function(event) {
+document.addEventListener('DOMContentLoaded', () => {
 
-            const accordionOpenElem = event.currentTarget
-            const accordionOpenElemParent = event.currentTarget.parentNode
+    let accordionOpenElem
+    let accordionOpenElemParent
+
+
+    const addAccorionClasses = () => {
+        accordionOpenElem.classList.toggle('accordion-open')
+        accordionOpenElemParent.classList.toggle('accordion-open-parent')
+    }
+
+    const removeAccordionClasses = () => {
+        document.querySelectorAll('.catalog__menu-description').forEach(item => item.classList.remove('accordion-open'))
+        document.querySelectorAll('.catalog__menu-item').forEach(item => item.classList.remove('accordion-open-parent'))
+    }
+
+    const removeListClasses = () => {
+        setTimeout(() => {
+            document.querySelectorAll('.catalog__menu-item-block').forEach(item => item.classList.remove('.catalog__menu-item-block-on'))
+        }, 300)
+    }
+
+    const addEmptyBlockClasses = () => {
+        accordionOpenElemParent.querySelector('.catalog__menu-empty-block').classList.add('catalog__menu-empty-block-on')
+        setTimeout(addAccorionClasses, 0)
+    }
+
+    document.querySelectorAll('.catalog__menu-description').forEach(item => {
+        item.addEventListener('click', (event) => {
+
+            accordionOpenElem = event.currentTarget
+            accordionOpenElemParent = event.currentTarget.parentNode
 
             if (accordionOpenElem.classList.contains('accordion-open')) {
                 if (accordionOpenElemParent.querySelector('.catalog__menu-item-block')) {
-                    setTimeout(function() {
-                        document.querySelector('.catalog__menu-item-block-on').classList.remove('catalog__menu-item-block-on')
-                    }, 300)
+                    setTimeout(() => document.querySelector('.catalog__menu-item-block-on').classList.remove('catalog__menu-item-block-on'), 300)
                 } else if (accordionOpenElemParent.querySelector('.catalog__menu-empty-block')) {
-                    setTimeout(function() {
-                        document.querySelector('.catalog__menu-empty-block-on').classList.remove('catalog__menu-empty-block-on')
-                    }, 300)
+                    setTimeout(() => document.querySelector('.catalog__menu-empty-block-on').classList.remove('catalog__menu-empty-block-on'), 300)
                 }
                 accordionOpenElem.classList.remove('accordion-open')
                 accordionOpenElemParent.classList.remove('accordion-open-parent')    
@@ -22,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 removeListClasses()
                 if (accordionOpenElemParent.querySelector('.catalog__menu-item-block')) {
                     accordionOpenElemParent.querySelector('.catalog__menu-item-block').classList.add('catalog__menu-item-block-on')
-                    setTimeout(addAccorionClasses, 0, accordionOpenElem, accordionOpenElemParent)
+                    setTimeout(addAccorionClasses, 0)
                 } else if (accordionOpenElemParent.querySelector('.catalog__menu-empty-block')) {
-                    addEmptyBlockClasses(accordionOpenElem, accordionOpenElemParent)
+                    addEmptyBlockClasses()
                 } else {
                     let artistEmptyInner = document.createElement('div')
                     artistEmptyInner.classList.add('catalog__menu-empty-block')
@@ -38,44 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     `
                     accordionOpenElemParent.append(artistEmptyInner)
 
-                    addEmptyBlockClasses(accordionOpenElem, accordionOpenElemParent)
+                    addEmptyBlockClasses()
                 }
             }
         })
     })
 })
-
-function addAccorionClasses(accordionOpenElem, accordionOpenElemParent) {
-    accordionOpenElem.classList.toggle('accordion-open')
-    accordionOpenElemParent.classList.toggle('accordion-open-parent')
-}
-
-function removeAccordionClasses() {
-    document.querySelectorAll('.catalog__menu-description').forEach(function(classRemove1) {
-        classRemove1.classList.remove('accordion-open')
-    })
-    document.querySelectorAll('.catalog__menu-item').forEach(function(classRemove2) {
-        classRemove2.classList.remove('accordion-open-parent')
-    })
-}
-
-function removeEmptyBlockClasses() {
-    setTimeout(function() {
-        document.querySelectorAll('.catalog__menu-empty-block-on').forEach(function(classRemove3) {
-            classRemove3.classList.remove('.catalog__menu-empty-block-on')
-        })
-    }, 300)
-}
-
-function removeListClasses() {
-    setTimeout(function() {
-        document.querySelectorAll('.catalog__menu-item-block').forEach(function(classRemove3) {
-            classRemove3.classList.remove('.catalog__menu-item-block-on')
-        })
-    }, 300)
-}
-
-function addEmptyBlockClasses(accordionOpenElem, accordionOpenElemParent) {
-    accordionOpenElemParent.querySelector('.catalog__menu-empty-block').classList.add('catalog__menu-empty-block-on')
-    setTimeout(addAccorionClasses, 0, accordionOpenElem, accordionOpenElemParent)
-}

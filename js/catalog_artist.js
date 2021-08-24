@@ -1,13 +1,57 @@
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.catalog__menu-item-item-artist').forEach(function(artistClick) {
-        artistClick.addEventListener('click', function(event) {
-            const artistClickElem = event.currentTarget
-            const artistClickParent = artistClickElem.parentNode
-            const artistClickNumber = artistClickParent.dataset.catalogItem
-            const artistClickArticle = document.querySelector(`[data-catalog-artist = "${artistClickNumber}"]`)
+document.addEventListener('DOMContentLoaded', () => {
 
-            const artistEmptyInner = `
-            <button class="artist-card-item-picture">
+    const listCatalogArtists = document.querySelectorAll('.catalog__artist-card-item')
+    const listItemArtist = document.querySelectorAll('.catalog__menu-item-item-artist')
+
+    listCatalogArtists.forEach(item => {
+        let eventNumber = item.dataset.catalogArtist
+        item.id = 'catalog' + eventNumber
+    })
+
+    let artistClickElem
+    let artistClickElemParentList
+    let artistClickNumber
+    let artistClickArticle
+    let artistClickParentList
+    let artistEmptyInner
+
+    
+    const followLink = artistClickNumber => location.href = '#catalog' + artistClickNumber
+    
+    const addArtistTransition = () => {
+        artistClickArticle.classList.add('catalog__artist-card-item-opacity')
+        followLink(artistClickNumber)
+    }
+
+    const removeArtistDisplay = () => artistClickParentList.querySelectorAll('.catalog__artist-card-item-on').forEach(item => item.classList.remove('catalog__artist-card-item-on'))
+    
+    const removeArtistOpen = () => {
+        artistClickParentList.querySelectorAll('.catalog__artist-card-item').forEach(item => item.classList.remove('catalog__artist-card-item-opacity'))
+        artistClickElemParentList.querySelectorAll('.catalog__menu-item-item-artist').forEach( item => item.classList.remove('catalog__item-artist-on'))
+    }
+        
+    const addArtist = () => {
+        artistClickArticle.classList.add('catalog__artist-card-item-on')
+        artistClickElem.classList.add('catalog__item-artist-on')
+        setTimeout(addArtistTransition, 0, artistClickArticle, artistClickNumber)
+    }
+
+    const manipulatingClasses = () => {
+        removeArtistOpen()
+        removeArtistDisplay()
+        addArtist()
+    }
+
+
+    listItemArtist.forEach( item => {
+        item.addEventListener('click', function(event) {
+            artistClickElem = event.currentTarget
+            artistClickElemParentList = artistClickElem.parentNode.parentNode
+            artistClickNumber = artistClickElem.parentNode.dataset.catalogItem
+            artistClickArticle = document.querySelector(`[data-catalog-artist = "${artistClickNumber}"]`)
+            artistClickParentList = artistClickArticle.parentNode
+            artistEmptyInner = `
+            <div class="artist-card-item-picture">
               <picture>
                 <source srcset="img/artist-x_320.png" media="(max-width: 576px)">
                 <source srcset="img/artist-x_768.png" media="(max-width: 768px)">
@@ -15,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <source srcset="img/artist-x_1920.png" media="(min-width: 1025px)">
                 <img class="artist-card-item-img" src="img/artist-x_1920.png" alt="">
               </picture>
-            </button>
+            </div>
             <span class="artist-card-item-name">Что мы о нём знаем?</span>
             <span class="artist-card-item-years"></span>
             <p class="artist-card-item-description">
@@ -25,27 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
             `
 
             if (artistClickArticle.childNodes.length > 0) {
-                removeArtistOpen()
-                addArtist(artistClickArticle, artistClickElem)
+                manipulatingClasses ()
             } else {
                 artistClickArticle.innerHTML = artistEmptyInner
-                removeArtistOpen()
-                addArtist(artistClickArticle, artistClickElem)
+                manipulatingClasses ()
             }
         })
     })
 })
-
-function removeArtistOpen() {
-    document.querySelectorAll('.catalog__artist-card-item').forEach(function(classRemove0) {
-        classRemove0.classList.remove('catalog__artist-card-item-on')
-    })
-    document.querySelectorAll('.catalog__menu-item-item-artist').forEach(function(classRemove1) {
-        classRemove1.classList.remove('catalog__item-artist-on')
-    })
-}
-
-function addArtist(artistClickArticle, artistClickElem) {
-    artistClickArticle.classList.add('catalog__artist-card-item-on')
-    artistClickElem.classList.add('catalog__item-artist-on')
-}
