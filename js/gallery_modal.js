@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
     elemImg.style.marginLeft=0
     elemImg.style.width='auto'
     elemImg.classList.add('open__swiper-slide')
-    document.body.classList.toggle('body__background')
+    document.body.classList.toggle('gallery-body-modal-window')
     document.querySelector('.gallery__mod-win').classList.toggle('gallery__mod-win-on')
-    document.querySelector('.gallery__swiper-text').classList.toggle('.gallery__swiper-text-on')
+    document.querySelector('.gallery__swiper-text').classList.toggle('gallery__swiper-text-on')
     document.querySelector('.gallery__mod-win-left').appendChild(elemImg)
     document.querySelector('.gallery__mod-win-right').appendChild(elemTxt)
   }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeModalWindow(elemImg, elemTxt) {
     document.querySelector('.gallery__mod-win-left').removeChild(elemImg)
     document.querySelector('.gallery__mod-win-right').removeChild(elemTxt)
-    document.body.classList.remove('body__background')
+    document.body.classList.remove('gallery-body-modal-window')
     document.querySelector('.gallery__mod-win').classList.remove('gallery__mod-win-on')
-    document.querySelector('.gallery__swiper-text').classList.remove('.gallery__swiper-text-on')
+    document.querySelector('.gallery__swiper-text').classList.remove('gallery__swiper-text-on')
   }

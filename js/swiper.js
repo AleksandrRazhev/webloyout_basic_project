@@ -61,13 +61,16 @@ window.addEventListener('resize', () => {
   initialEventsSwiper()
 })
 
-
 function initialEventsSwiper() {
   if (window.innerWidth <= 650 && eventsSwiperClass.dataset.mobile == 'false'){
     eventsSwiper = new Swiper (eventsSwiperClass, {
       slidesPerView: 1,
       spaceBetween: 27,
       loop: true,
+      pagination: {
+        el: ".events__pagination",
+        type: 'bullets',
+      },
     })
 
     eventsSwiperClass.dataset.mobile = 'true'
