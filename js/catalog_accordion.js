@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
 
     let accordionOpenElem
     let accordionOpenElemParent
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     accordionOpenElemParent.append(artistEmptyInner)
 
                     addEmptyBlockClasses()
+
                 }
             }
         })

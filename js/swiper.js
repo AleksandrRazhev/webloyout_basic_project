@@ -11,7 +11,6 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
 });
 
 const gallerySwiper = new Swiper('.gallery__swiper-container', {
-
   slidesPerColumnFill: "row",
   slidesPerView: 1,
   slidesPerColumn: 1,
@@ -83,4 +82,3 @@ function initialEventsSwiper() {
     }
   }
 }
-
