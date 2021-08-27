@@ -11,9 +11,11 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
 });
 
 const gallerySwiper = new Swiper('.gallery__swiper-container', {
-  slidesPerColumnFill: "row",
   slidesPerView: 1,
-  slidesPerColumn: 1,
+  grid: {
+    rows: 1,
+    fill: 'row',
+  },
   spaceBetween: 20,
   pagination: {
     el: ".gallery__pagination",
@@ -23,13 +25,17 @@ const gallerySwiper = new Swiper('.gallery__swiper-container', {
   breakpoints: {
     577: {
       slidesPerView: 2,
-      slidesPerColumn: 2,
+      grid: {
+        rows: 2,
+      },
       spaceBetween: 34
     },
 
     1201: {
       slidesPerView: 3,
-      slidesPerColumn: 2,
+      grid: {
+        rows: 2,
+      },
       spaceBetween: 50
     }
   },
@@ -77,7 +83,7 @@ function initialEventsSwiper() {
 
   if (window.innerWidth > 650) {
     eventsSwiperClass.dataset.mobile = 'false'
-    if (eventsSwiperClass.classList.contains('swiper-container-initialized')) {
+    if (eventsSwiperClass.classList.contains('swiper-initialized')) {
       eventsSwiper.destroy()
     }
   }
