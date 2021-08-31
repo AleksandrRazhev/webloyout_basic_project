@@ -2,12 +2,13 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
   // Optional parameters
   direction: 'horizontal',
   loop: true,
-
   scrollbar: {
     hide: true,
   },
-
   a11y: false,
+  autoplay: {
+    delay: 2000
+  },
 });
 
 const gallerySwiper = new Swiper('.gallery__swiper-container', {
