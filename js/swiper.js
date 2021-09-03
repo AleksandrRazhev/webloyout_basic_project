@@ -63,10 +63,6 @@ let eventsSwiper
 
 initialEventsSwiper()
 
-window.addEventListener('resize', () => {
-  initialEventsSwiper()
-})
-
 function initialEventsSwiper() {
   if (window.innerWidth <= 650 && eventsSwiperClass.dataset.mobile == 'false'){
     eventsSwiper = new Swiper (eventsSwiperClass, {
@@ -78,10 +74,10 @@ function initialEventsSwiper() {
         type: 'bullets',
       },
     })
-
+    
     eventsSwiperClass.dataset.mobile = 'true'
   }
-
+  
   if (window.innerWidth > 650) {
     eventsSwiperClass.dataset.mobile = 'false'
     if (eventsSwiperClass.classList.contains('swiper-initialized')) {
@@ -89,3 +85,67 @@ function initialEventsSwiper() {
     }
   }
 }
+
+// publicationsSwiper
+
+const publicationsSwiperClass = document.querySelector('.publications__swiper')
+let publicationsSwiper
+
+const initialPublicationsSwiper = () => {
+  if (window.innerWidth >= 577 && publicationsSwiperClass.dataset.mobile == 'true'){
+    publicationsSwiper = new Swiper('.publications__swiper', {
+      slidesPerView: 2,
+      grid: {
+        rows: 1,
+        fill: 'row',
+      },
+      spaceBetween: 34,
+      pagination: {
+        el: ".publications__pagination",
+        type: "fraction"
+      },
+      
+      breakpoints: {
+        1201: {
+          slidesPerView: 3,
+          grid: {
+            rows: 1,
+          },
+          spaceBetween: 50
+        }
+      },
+      
+      // Optional parameters
+      direction: 'horizontal',
+      
+      
+      // Navigation arrows
+      navigation: {
+        nextEl: '.publications__swiper-button-next',
+        prevEl: '.publications__swiper-button-prev',
+      },
+      
+      scrollbar: {
+        hide: true,
+      },
+      
+      a11y: false,
+    });
+    
+    publicationsSwiperClass.dataset.mobile = 'false'
+  }
+  
+  if (window.innerWidth <= 576) {
+    publicationsSwiperClass.dataset.mobile = 'true'
+    if (publicationsSwiperClass.classList.contains('swiper-initialized')) {
+      publicationsSwiper.destroy()
+    }
+  }
+}
+
+initialPublicationsSwiper()
+
+window.addEventListener('resize', () => {
+  initialEventsSwiper()
+  initialPublicationsSwiper()
+})
