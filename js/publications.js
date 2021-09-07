@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const showCloseBtn = () => {
         inputs.forEach(item => {
             if (item.checked) {
-                item.parentElement.classList.add('publications__form-categories-item-shown')
+                item.parentElement.parentElement.classList.add('publications__form-categories-item-shown')
             } else {
-                item.parentElement.classList.remove('publications__form-categories-item-shown')
+                item.parentElement.parentElement.classList.remove('publications__form-categories-item-shown')
             }
         })
     }

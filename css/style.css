@@ -2542,18 +2542,18 @@ h1 {
 
 .publications__container {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 77px;
   display: flex;
 }
 
 .publications__inputs {
   font-size: 0;
-  width: calc(450 / 1600 * 100%);
+  width: calc(450 / 1600 * 100% - 3px);
 }
 
 .publications__article {
-  margin-top: 8px;
   margin-bottom: 24px;
+  padding-top: 8px;
   font-weight: 400;
   font-size: 48px;
   line-height: 1;
@@ -2579,31 +2579,23 @@ h1 {
   margin-bottom: 27px;
 }
 
-.publications__form-categories-checkbox {
-  display: none;
-  cursor: pointer;
-}
 
 .publications__form-categories-label {
   display: inline-block;
   position: relative;
   padding-left: 24px;
-  line-height: 32px;
-  white-space: nowrap;
-  color: #FFFFFF;
   cursor: pointer;
-  transition: color .3s ease;
 }
 
-.publications__form-categories-label:hover {
-  color: #C283F3;
+.publications__form-categories-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
-.publications__form-categories-checkbox:checked + .publications__form-categories-label {
-  color: #C283F3;
-}
-
-.publications__form-categories-label::before {
+.publications__form-categories-custom-checkbox::before {
   content: '';
   position: absolute;
   top: calc(50% - 12px / 2);
@@ -2615,15 +2607,19 @@ h1 {
   transition: border-color .3s ease;
 }
 
-.publications__form-categories-label:hover::before {
+.publications__form-categories-checkbox:checked + .publications__form-categories-custom-checkbox::before {
   border-color: #C283F3;
 }
 
-.publications__form-categories-checkbox:checked + .publications__form-categories-label::before {
+.publications__form-categories-checkbox:focus + .publications__form-categories-custom-checkbox::before {
   border-color: #C283F3;
 }
 
-.publications__form-categories-label::after {
+.publications__form-categories-label:hover .publications__form-categories-custom-checkbox::before {
+  border-color: #C283F3;
+}
+
+.publications__form-categories-custom-checkbox::after {
   content: '';
   display: inline-block;
   position: absolute;
@@ -2635,8 +2631,27 @@ h1 {
   transition: background-color .3s ease;
 }
 
-.publications__form-categories-checkbox:checked + .publications__form-categories-label::after {
+.publications__form-categories-checkbox:checked ~ .publications__form-categories-custom-checkbox::after {
   background-color: #C283F3;
+}
+
+.publications__form-categories-checkbox-name {
+  line-height: 32px;
+  white-space: nowrap;
+  color: #FFFFFF;
+  transition: color .3s ease;
+}
+
+.publications__form-categories-label:hover .publications__form-categories-checkbox-name {
+  color: #C283F3;
+}
+
+.publications__form-categories-checkbox:focus ~ .publications__form-categories-checkbox-name {
+  color: #C283F3;
+}
+
+.publications__form-categories-checkbox:checked ~ .publications__form-categories-checkbox-name {
+  color: #C283F3;
 }
 
 .publications__form-categories-close-btn {
@@ -2739,17 +2754,18 @@ h1 {
 }
 
 .publications__slider {
-  width: calc( 100% - (450 / 1600 * 100%));
+  width: calc( 100% - (450 / 1600 * 100% - 3px));
 }
 
 .publications__slider-nav {
   height: 30px;
   display: flex;
   width: 130px;
-  justify-content: space-between;
-  align-items: center;
+  margin-left: 3px;
   margin-top: 33px;
   margin-bottom: 31px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .publications__swiper-button-prev,
@@ -2802,6 +2818,8 @@ h1 {
 }
 
 .publications__swiper {
+  padding-left: 3px;
+  padding-bottom: 3px;
 }
 .publications__swiper-wrapper {
 }
@@ -2892,12 +2910,16 @@ h1 {
     background-image: url(../img/publications_back_1024.jpg);
   }
 
+  .publications__container {
+    padding-bottom: 80px;
+  }
+
   .publications__inputs {
-    width: calc(295 / 924 * 100%);
+    width: calc(295 / 924 * 100% - 3px);
   }
 
   .publications__slider {
-    width: calc( 100% - (295 / 924 * 100%));
+    width: calc( 100% - (295 / 924 * 100% - 3px));
   }
 
   .publications__card-img {
@@ -2916,7 +2938,7 @@ h1 {
   }
 
   .publications__container {
-    padding-bottom: 77px;
+    padding-bottom: 74px;
     flex-direction: column;
   }
 
@@ -2929,8 +2951,8 @@ h1 {
   }
 
   .publications__article {
-    margin-top: 13px;
     margin-bottom: 23px;
+    padding-top: 13px;
   }
 
   .publications__form-categories {
@@ -2952,10 +2974,11 @@ h1 {
   .publications__slider-nav {
     margin-top: auto;
     margin-bottom: 30px;
+    margin-left: 0;
   }
 
   .publications__swiper {
-    padding: 0 27px;
+    padding: 0 27px 3px;
   }
 }
 
@@ -3027,13 +3050,17 @@ h1 {
   }
 
   .publications__container {
-    padding-top: 50px;
-    padding-bottom: 0;
+    padding: 50px 12px 0 12px;
+  }
+
+  .publications__inputs {
+    padding-left: 3px;
+    padding-right: 3px;
   }
 
   .publications__article {
-    margin-top: 0;
     margin-bottom: 11px;
+    padding-top: 0;
     font-size: 28px;
     line-height: 38px;
   }
@@ -3043,7 +3070,7 @@ h1 {
   }
 
   .publications__swiper {
-    padding: 0;
+    padding: 0 3px;
   }
 
   .publications__swiper-wrapper {
