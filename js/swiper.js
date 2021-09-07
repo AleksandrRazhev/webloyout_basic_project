@@ -106,6 +106,13 @@ const initialPublicationsSwiper = () => {
       },
       
       breakpoints: {
+        993: {
+          slidesPerView: 2,
+          grid: {
+            rows: 1,
+          },
+          spaceBetween: 49
+        },
         1201: {
           slidesPerView: 3,
           grid: {
