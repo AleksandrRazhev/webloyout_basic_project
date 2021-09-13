@@ -156,3 +156,31 @@ window.addEventListener('resize', () => {
   initialEventsSwiper()
   initialPublicationsSwiper()
 })
+
+const projectsSwiper = new Swiper('.projects__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 22,
+  breakpoints: {
+    577: {
+      slidesPerView: 2,
+      spaceBetween: 34
+    },
+    993: {
+      slidesPerView: 2,
+      spaceBetween: 50
+    },
+    1201: {
+      slidesPerView: 3,
+      spaceBetween: 50
+    }
+  },
+  direction: 'horizontal',
+  navigation: {
+    nextEl: '.projects__swiper-button-next',
+    prevEl: '.projects__swiper-button-prev',
+  },
+  scrollbar: {
+    hide: true,
+  },
+  a11y: false,
+});
