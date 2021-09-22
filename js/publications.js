@@ -24,8 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const closeCategorieShown = elem => {
-        elem.preventDefault()
-        elem.currentTarget.parentElement.querySelector('.publications__form-categories-checkbox').checked = false
+        const parentParentCheckbox = elem.currentTarget.parentElement.querySelector('.publications__form-categories-checkbox');
+                
+        elem.preventDefault();
+        if (parentParentCheckbox.checked == false) {
+            parentParentCheckbox.checked = true;
+        } else {
+            parentParentCheckbox.checked = false;
+        }
     }
         
     const listenClickCategorieShown = () => {

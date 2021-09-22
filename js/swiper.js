@@ -7,7 +7,7 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
   },
   a11y: false,
   autoplay: {
-    delay: 2000
+    delay: 3000
   },
 });
 

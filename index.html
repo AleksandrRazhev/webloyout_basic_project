@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
+  <link rel="stylesheet" href="css/simplebar.css">
   <link rel="stylesheet" href="css/choices.css">
   <link rel="stylesheet" href="css/swiper-bundle.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/swiper-bundle.min.js"></script>
+  <script defer src="js/simplebar.min.js"></script>
   <script defer src="js/choices.js"></script>
   <script defer src="js/header_dropdown_click.js"></script>
   <script defer src="js/burger_menu.js"></script>
@@ -27,6 +29,9 @@
   <script defer src="js/projects_tooltipes.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
   <script defer src="js/contacts_map.js"></script>
+  <script defer src="js/inputmask.min.js"></script>
+  <script defer src="js/just-validate.min.js"></script>
+  <script defer src="js/contacts_validate.js"></script>
 </head>
 <body>
   <h1 class="visually-hidden">Blanchard — художественная галерея</h1>
@@ -60,7 +65,7 @@
             </div>
           </div>
           <div class="header-top__logo">
-            <a class="logo" href="">
+            <a class="logo">
               <svg width="173" height="40" viewBox="0 0 173 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.78965 32.7802L0.289746 29.1348H2.09561L3.79365 31.7425L5.50518 29.1348H7.29756L4.79092 32.7802L7.42559 36.5873H5.6332L3.79365 33.7977L1.96084 36.5873H0.168457L2.78965 32.7802Z" fill="white"/>
                 <path d="M7.60078 29.1348H9.32578L10.8419 33.3597C11.071 33.9616 11.2237 34.5276 11.3001 35.0577H11.354C11.3944 34.8106 11.4686 34.5119 11.5764 34.1615C11.6842 33.8066 12.2547 32.1311 13.2879 29.1348H14.9994L11.8122 37.5778C11.2327 39.1276 10.2669 39.9025 8.91475 39.9025C8.56436 39.9025 8.22295 39.8644 7.89053 39.788V38.5347C8.12861 38.5886 8.40039 38.6155 8.70586 38.6155C9.46953 38.6155 10.0063 38.173 10.3163 37.2881L10.5926 36.5873L7.60078 29.1348Z" fill="white"/>
@@ -823,7 +828,7 @@
       </div>
       <div class="gallery__sale">
         <p class="gallery__sale-text">
-          Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__sale-link" href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
+          Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery__sale-link link-pseudo-classes" href="">авторизуйтесь,</a> либо воспользуйтесь лицензией.
         </p>
       </div>
     </div>
@@ -1113,8 +1118,8 @@
         </div>
         <div class="catalog__menu">
           <ul class="catalog__menu-list">
-            <li class="catalog__menu-item">
-              <div class="catalog__menu-description">
+            <li class="catalog__menu-item accordion-open-parent">
+              <div class="catalog__menu-description accordion-open">
                 <button class="catalog__menu-description-btn">
                   <svg class="catalog__menu-description-btn-img" width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="description-btn-img-back" d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#ECECEC"/>
@@ -1124,7 +1129,7 @@
                 </button>
                 <span class="catalog__menu-description-text">C 1400 по 1499 гг.</span>
               </div>
-              <div class="catalog__menu-item-block">
+              <div class="catalog__menu-item-block catalog__menu-item-block-on">
                 <ul class="catalog__menu-item-list">
                   <li class="catalog__menu-item-item" data-catalog-item="1">
                     <button class="catalog__menu-item-item-artist">
@@ -1644,7 +1649,7 @@
         </div>
       </div>
       <div class="events__pagination"></div>
-      <button class="events__show-all">Все события</button>
+      <button class="btn-focus-double-border events__show-all">Все события</button>
     </div>
   </section>
 
@@ -1654,7 +1659,7 @@
         <h2 class="publications__article">Издания</h2>
         <form class="publications__form">
           <div class="publications__form-categories">
-            <button class="publications__form-categories-article publications__form-categories-article-close">Категории</button>
+            <h3 class="publications__form-categories-article publications__form-categories-article-close">Категории</h3>
             <ul class="publications__form-categories-block publications__form-categories-block-close">
               <li class="publications__form-categories-item"> 
                 <label class="publications__form-categories-label">
@@ -1818,9 +1823,9 @@
             </span>
             <div class="publications__form-input-block">
               <label class="publications__form-input-from-txt" for="input-from">От</label>
-              <input class="publications__form-input-input" type="text" id="input-from" placeholder="50">
+              <input class="publications__form-input-input" type="number" id="input-from" placeholder="50">
               <label class="publications__form-input-to-txt" for="input-to">до</label>
-              <input class="publications__form-input-input" type="text" id="input-to" placeholder="25 000">
+              <input class="publications__form-input-input" type="number" id="input-to" placeholder="25 000">
               <span class="publications__form-input-currency">руб.</span>
             </div>
           </div>
@@ -1856,12 +1861,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Искусство цвета</strong></span>
+                  <h3 class="publications__card-title">Искусство цвета</h3>
                   <span class="publications__card-author">Иттен, Иоханнес</span>
                 </div>
                 <span class="publications__card-price">620 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article><article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
                 <source srcset="img/publications_2_320.jpg" media="(max-width: 576px)">
@@ -1872,12 +1877,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Типографика</strong></span>
+                  <h3 class="publications__card-title">Типографика</h3>
                   <span class="publications__card-author">Рудер, Эмиль </span>
                 </div>
                 <span class="publications__card-price">2 450 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
             <article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
@@ -1889,12 +1894,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Книга про буквы</strong></span>
+                  <h3 class="publications__card-title">Книга про буквы</h3>
                   <span class="publications__card-author">Гордон, Юрий </span>
                 </div>
                 <span class="publications__card-price">2 200 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
             <article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
@@ -1906,12 +1911,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Николай Ильин</strong></span>
+                  <h3 class="publications__card-title">Николай Ильин</h3>
                   <span class="publications__card-author">Кричевский, Владимир</span>
                 </div>
                 <span class="publications__card-price">1 100 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
             <article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
@@ -1923,12 +1928,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Модульные системы в графическом дизайне</strong></span>
+                  <h3 class="publications__card-title">Модульные системы в графическом дизайне</h3>
                   <span class="publications__card-author">Мюллер-Брокманн, Йозеф</span>
                 </div>
                 <span class="publications__card-price">1 450 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
             <article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
@@ -1940,12 +1945,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Эволюция графических стилей</strong></span>
+                  <h3 class="publications__card-title">Эволюция графических стилей</h3>
                   <span class="publications__card-author">Хеллер, Чваст</span>
                 </div>
                 <span class="publications__card-price">3 200 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
             <article class="swiper-slide publications__card">
               <picture class="publications__card-picture">
@@ -1957,12 +1962,12 @@
               </picture>
               <div class="publications__card-text">
                 <div class="publications__card-text-left">
-                  <span class="publications__card-title"><strong>Искусство и визуальное восприятие</strong></span>
+                  <h3 class="publications__card-title">Искусство и визуальное восприятие</h3>
                   <span class="publications__card-author">Арнхейм, Рудольф</span>
                 </div>
                 <span class="publications__card-price">2 200 руб</span>
               </div>
-              <button class="publications__card-button">Заказать</button>
+              <button class="btn-focus-double-border publications__card-button">Заказать</button>
             </article>
           </div>
         </div>
@@ -1987,7 +1992,7 @@
           <button class="projects__tooltip-simbol" data-tippy-content="В стремлении повысить качество">i</button>
         </span>
         предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости. Подробнее: 
-        <a class="projects__description-link" href="">blanchard-art.ru/projects/about</a>
+        <a class="projects__description-link link-pseudo-classes" href="">blanchard-art.ru/projects/about</a>
       </p>
       <h3 class="projects__slider-article">
         Партнёры проектов:
@@ -2058,8 +2063,12 @@
             <label class="contacts__form-label" for="contacts-name">
               Заказать обратный звонок
             </label>
-            <input class="contacts__form-input contacts__form-name" type="text" placeholder="Имя*" required id="contacts-name">
-            <input class="contacts__form-input contacts__form-phone" type="number" placeholder="Телефон*" required>
+            <label class="contacts__form-label-validate">
+              <input class="contacts__form-input contacts__form-name" type="text" placeholder="Имя*" required id="contacts-name" data-validate-field="name">
+            </label>
+            <label class="contacts__form-label-validate">
+              <input class="contacts__form-input contacts__form-phone" type="tel" placeholder="Телефон*" required data-validate-field="tel">
+            </label>
             <button class="contacts__form-button" type="submit">Заказать</button>
           </form>
           <div class="contacts__social">
