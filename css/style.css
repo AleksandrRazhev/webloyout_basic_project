@@ -2541,7 +2541,7 @@ h1 {
   color: #FFF;
   cursor: pointer;
   outline: none;
-  transition-property: background-color, border-color, border-width;
+  transition-property: background-color, border-color, border-width, color;
   transition-duration: .3s;
   transition-timing-function: ease-in-out;
 }
@@ -2555,6 +2555,7 @@ h1 {
   background: #7943A4;
   border-width: 3px;
   border-color: #D1A9F0;
+  color: #fff;
 }
 
 .btn-focus-double-border:focus:not(:active):before {
@@ -3580,17 +3581,29 @@ h1 {
   margin-bottom: 23px;
   border-radius: 100px;
   border: 1px solid #333333;
+  cursor: pointer;
+  outline: none;
 }
 
 .contacts__form-input::placeholder {
   font-size: 16px;
   line-height: 32px;
   color: #999999;
+  transition: background-color .3s ease-in-out;
+}
+
+.contacts__form-input:hover {
+  background-color: #EAEAEA;
+}
+
+.contacts__form-input:focus {
+  background-color: #EAEAEA;
 }
 
 .contacts__form-label-validate {
   display: flex;
   flex-direction: column;
+  width: 400px;
 }
 
 .js-validate-error-field ~ .js-validate-error-label {
@@ -3611,6 +3624,7 @@ h1 {
   text-align: center;
   border: 2px solid #9D5CD0;
   border-radius: 100px;
+  color: #9D5CD0;
   background-color: transparent;
 }
 
@@ -3626,12 +3640,35 @@ h1 {
 }
 
 .contacts__social-link {
+  position: relative;
   display: inline-block;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  opacity: 1;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition-property: opacity, border-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.contacts__social-link:hover:not(:active),
+.contacts__social-link:focus:not(:active) {
+  opacity: 0.5;
+}
+
+.contacts__social-link:active {
+  border-color: #9643A4;
 }
 
 .contacts__social-link svg {
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: -1;
 }
 
 .contacts__social-link:not(:last-child) {
@@ -3663,6 +3700,7 @@ h1 {
     width: 335px;
   }
 
+  .contacts__social-link,
   .contacts__social-link svg {
     width: 60px;
     height: 60px;
@@ -3732,11 +3770,12 @@ h1 {
 
   .contacts__form-label {
     margin-bottom: 17px;
-  }
-
-  .contacts__form-label {
     font-size: 18px;
     line-height: 32px;
+  }
+
+  .contacts__form-label-validate {
+    width: auto;
   }
 
   .contacts__form-input {
@@ -3757,6 +3796,7 @@ h1 {
     line-height: 32px;
   }
 
+  .contacts__social-link,
   .contacts__social-link svg {
     width: 50px;
     height: 50px;
