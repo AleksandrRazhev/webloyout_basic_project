@@ -21,9 +21,7 @@ const contactsValidate = () => {
             },
         },
         messages: {
-            name: {
-                minLength: 'Недопустимый формат',
-            },
+            name: 'Недопустимый формат',
             tel: 'Недопустимый формат',
         },
         colorWrong: '#D11616',
