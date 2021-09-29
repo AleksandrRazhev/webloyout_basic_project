@@ -5,9 +5,13 @@ const heroSwiper = new Swiper('.back-hero-img__swiper-container', {
   scrollbar: {
     hide: true,
   },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
   a11y: false,
   autoplay: {
-    delay: 3000
+    delay: 20000
   },
 });
 
@@ -92,7 +96,10 @@ const publicationsSwiperClass = document.querySelector('.publications__swiper')
 let publicationsSwiper
 
 const initialPublicationsSwiper = () => {
-  if (window.innerWidth >= 577 && publicationsSwiperClass.dataset.mobile == 'true'){
+
+  console.log("window.innerWidth = " + window.innerWidth)
+
+  if (window.innerWidth >= 576 && publicationsSwiperClass.dataset.mobile == 'true'){
     publicationsSwiper = new Swiper('.publications__swiper', {
       slidesPerView: 2,
       grid: {
@@ -142,7 +149,7 @@ const initialPublicationsSwiper = () => {
     publicationsSwiperClass.dataset.mobile = 'false'
   }
   
-  if (window.innerWidth <= 576) {
+  if (window.innerWidth < 576) {
     publicationsSwiperClass.dataset.mobile = 'true'
     if (publicationsSwiperClass.classList.contains('swiper-initialized')) {
       publicationsSwiper.destroy()
