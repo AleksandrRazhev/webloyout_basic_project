@@ -62,10 +62,10 @@ const gallerySwiper = new Swiper('.gallery__swiper-container', {
   a11y: false,
 });
 
-const eventsSwiperClass = document.querySelector('.events__swiper-container')
-let eventsSwiper 
+const eventsSwiperClass = document.querySelector('.events__swiper-container');
+let eventsSwiper; 
 
-initialEventsSwiper()
+initialEventsSwiper();
 
 function initialEventsSwiper() {
   if (window.innerWidth <= 650 && eventsSwiperClass.dataset.mobile == 'false'){
@@ -77,29 +77,27 @@ function initialEventsSwiper() {
         el: ".events__pagination",
         type: 'bullets',
       },
-    })
+    });
     
-    eventsSwiperClass.dataset.mobile = 'true'
+    eventsSwiperClass.dataset.mobile = 'true';
   }
   
   if (window.innerWidth > 650) {
-    eventsSwiperClass.dataset.mobile = 'false'
+    eventsSwiperClass.dataset.mobile = 'false';
     if (eventsSwiperClass.classList.contains('swiper-initialized')) {
-      eventsSwiper.destroy()
+      eventsSwiper.destroy();
     }
   }
 }
 
 // publicationsSwiper
 
-const publicationsSwiperClass = document.querySelector('.publications__swiper')
-let publicationsSwiper
+const publicationsSwiperClass = document.querySelector('.publications__swiper');
+let publicationsSwiper;
 
 const initialPublicationsSwiper = () => {
 
-  console.log("window.innerWidth = " + window.innerWidth)
-
-  if (window.innerWidth >= 576 && publicationsSwiperClass.dataset.mobile == 'true'){
+  if (window.innerWidth >= 576 && publicationsSwiperClass.dataset.mobile == 'true') {
     publicationsSwiper = new Swiper('.publications__swiper', {
       slidesPerView: 2,
       grid: {
@@ -146,23 +144,25 @@ const initialPublicationsSwiper = () => {
       a11y: false,
     });
     
-    publicationsSwiperClass.dataset.mobile = 'false'
+    publicationsSwiperClass.dataset.mobile = 'false';
   }
   
   if (window.innerWidth < 576) {
-    publicationsSwiperClass.dataset.mobile = 'true'
+    publicationsSwiperClass.dataset.mobile = 'true';
     if (publicationsSwiperClass.classList.contains('swiper-initialized')) {
-      publicationsSwiper.destroy()
+      publicationsSwiper.destroy();
     }
   }
-}
+};
 
-initialPublicationsSwiper()
+initialPublicationsSwiper();
 
 window.addEventListener('resize', () => {
-  initialEventsSwiper()
-  initialPublicationsSwiper()
-})
+  setTimeout(() => {
+    initialEventsSwiper();
+    initialPublicationsSwiper();
+  });
+});
 
 const projectsSwiper = new Swiper('.projects__swiper', {
   slidesPerView: 1,
