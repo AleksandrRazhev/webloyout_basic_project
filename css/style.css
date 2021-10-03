@@ -3555,7 +3555,7 @@ h1 {
 .contacts__map {
   position: absolute;
   left: calc(var(--contacts-text-width) + 10px);
-  right: 0;
+  right: -130px;
   top: -1px;
   bottom: -1px;
 }
