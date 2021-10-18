@@ -1293,6 +1293,7 @@ h1 {
 /* swiper buttons slyle start*/
 
 .swiper-button {
+  font-size: 0;
   border: none;
   background: none;
   cursor: pointer;
@@ -1304,27 +1305,31 @@ h1 {
 }
 
 .swiper-button-img {
-  border: 2px solid transparent;
   border-radius: 50%;
-  transition: border-color .3s ease-in-out;
 }
 
-.swiper-button:focus .swiper-button-img,
-.swiper-button:active .swiper-button-img {
-  border-color: #000;
+.swiper-button-img-border {
+  stroke: #666;
+  stroke-width: 2px;
+  transition: stroke .3s ease-in-out;
+}
+
+.swiper-button:focus:not(:disabled) .swiper-button-img-border,
+.swiper-button:active:not(:disabled) .swiper-button-img-border {
+  stroke: #000;
+}
+
+.swiper-button:hover:not(:focus):not(:active):not(:disabled) .swiper-button-img-border {
+  stroke: #9D5CD0;
 }
 
 .swiper-button-img-back {
   transition: fill .3s ease-in-out;
 }
 
-.swiper-button:hover .swiper-button-img-back,
-.swiper-button:active .swiper-button-img-back {
+.swiper-button:hover:not(:disabled) .swiper-button-img-back,
+.swiper-button:active:not(:disabled) .swiper-button-img-back {
   fill: #9D5CD0;
-}
-
-.swiper-button-img-border {
-  stroke: #666;
 }
 
 /* swiper buttons slyle end*/
@@ -3413,28 +3418,16 @@ h1 {
   justify-content: center;
   align-items: center;
   border: 1px solid;
-  filter: grayscale(100%);
-  opacity: 0.5;
   background: #FFFFFF;
   border-color: #CACACA;
   outline: none;
-  transition-property: filter, border-color, opacity;
+  transition-property: border-color;
   transition-duration: .3s;
   transition-timing-function: ease-in-out;
 }
 
-.projects__card:hover {
-  filter: grayscale(0);
-  opacity: 1;
-}
-
-.projects__card:focus {
-  border-color: #9D5CD0;
-}
-
+.projects__card:focus,
 .projects__card:active {
-  filter: grayscale(0);
-  opacity: 1;
   border-color: #9D5CD0;
 }
 
@@ -3442,6 +3435,17 @@ h1 {
   /* width: 73%; */
   /* height: 43%; */
   object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition-property: filter, opacity;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.projects__card:hover .projects__card-img,
+.projects__card:active .projects__card-img {
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 .projects__slider {
